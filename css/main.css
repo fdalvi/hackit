@@ -1,0 +1,23 @@
+#history-prompt
+{
+	float:left;   
+}
+
+#cmd-prompt
+{
+	float:left;
+}
+
+#cmd-input
+{
+	min-height:20px;
+	/*width:100px;*/
+	display: block;
+	word-wrap: break-word;
+	outline: 0px solid transparent;
+}
+
+.terminal-font
+{
+	font-family: 'Ubuntu Mono', sans-serif;
+}
