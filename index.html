@@ -10,7 +10,8 @@
 	<div id="cmd-history">
 	</div>
 	<div id="cmd-entry">
-		<span id="cmd-prompt" class="terminal-font">local@hackit>&nbsp</span><span id="cmd-input" class="terminal-font" contentEditable="true"></span>
+		<span class="cmd-prompt terminal-font">local@hackit>&nbsp</span>
+		<span class="cmd-input terminal-font" onmouseup="saveSelection();" onkeyup="saveSelection();" onfocus="restoreSelection();" contenteditable="true"></span>
 	</div>
 </body>
 </html>

@@ -3,18 +3,18 @@
 	float:left;   
 }
 
-#cmd-prompt
+.cmd-prompt
 {
 	float:left;
 }
 
-#cmd-input
+.cmd-input
 {
 	min-height:20px;
-	/*width:100px;*/
-	display: block;
+	display: inline-block;
 	word-wrap: break-word;
 	outline: 0px solid transparent;
+	clear:right;
 }
 
 .terminal-font
