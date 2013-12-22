@@ -27,35 +27,7 @@ $(document).ready(function() {
 	$("#cmd-entry > .cmd-input")[0].focus();
 });
 
-
-function initPromptFocus()
-{
-	// Inspired from http://stackoverflow.com/a/2948573
-	// Autofocus the command promt
-	var div = $("#cmd-entry > .cmd-input")[0];
-
-	div.onfocus = function() {
-		window.setTimeout(function() {
-			var sel, range;
-			if (window.getSelection && document.createRange) {
-				range = document.createRange();
-				range.selectNodeContents(div);
-				range.collapse(true);
-				sel = window.getSelection();
-				sel.removeAllRanges();
-				sel.addRange(range);
-			} else if (document.body.createTextRange) {
-				range = document.body.createTextRange();
-				range.moveToElementText(div);
-				range.collapse(true);
-				range.select();
-			}
-		}, 1);
-	};
-
-	div.focus();
-}
-
+// Inspired from http://stackoverflow.com/a/3323835
 var savedRange;
 function saveSelection()
 {
