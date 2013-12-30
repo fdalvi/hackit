@@ -8,12 +8,12 @@ function Directory (name, dateModified) {
 }
 
 Directory.prototype.addDirectory = function(child) {
-	return this.directories.push(child);
+	this.directories.push(child);
 	child.parent = this;
 };
 
 Directory.prototype.addFile = function(child) {
-	return this.files.push(child);
+	this.files.push(child);
 	child.parent = this;
 };
 
@@ -71,8 +71,31 @@ Directory.prototype.removeAllDirectories = function() {
 	this.directories = null;
 };
 
-Directory.prototype.listChildren = function(child) {
-	return this.directories.toString() + " " + this.files.toString();
+Directory.prototype.listAll = function(child) {
+	var result = "";
+	for(var i=0; i<this.directories.length; i++)
+		result += "<span class='tabbed folder'>" + this.directories[i].name + "</span>";
+	for(var i=0; i<this.files.length; i++)
+		result += "<span class='tabbed'>" + this.files[i].name + "</span>";
+	return result;
+};
+
+Directory.prototype.isRoot = function() {
+	if(this.parent == undefined || this.parent == null)
+		return true;
+	else
+		return false;
+};
+
+Directory.prototype.childByName = function(childName) {
+	for (var i = 0; i<this.directories.length; i++) {
+		if(this.directories[i].name == childName)
+		{
+			return this.directories[i];
+			break;
+		}
+	};
+	return null;
 };
 
 function File (name, dateModified, binaryFile, content) {

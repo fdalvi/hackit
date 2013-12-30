@@ -10,9 +10,8 @@
 
 .cmd-input
 {
-	min-height:20px;
+	min-height:18px;
 	display: inline-block;
-	word-wrap: break-word;
 	outline: 0px solid transparent;
 	clear:right;
 }
@@ -20,4 +19,23 @@
 .terminal-font
 {
 	font-family: 'Ubuntu Mono', sans-serif;
+}
+
+.tabbed
+{
+	margin-right:3em
+}
+
+.folder
+{
+	background-color: green;
+}
+
+#terminal
+{
+	background-color: black;
+	color: white;
+	height:80%;
+	overflow-y: auto;
+	overflow-x:hidden;
 }

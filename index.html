@@ -8,11 +8,13 @@
 	<script src="js/main.js"></script>
 </head>
 <body>
-	<div id="cmd-history">
-	</div>
-	<div id="cmd-entry">
-		<span class="cmd-prompt terminal-font">local@hackit>&nbsp</span>
-		<span class="cmd-input terminal-font" onmouseup="saveSelection();" onkeyup="saveSelection();" onfocus="restoreSelection();" contenteditable="true"></span>
+	<div id="terminal" spellcheck="false">
+		<div id="cmd-history" class="terminal-font">
+		</div>
+		<div id="cmd-entry">
+			<span class="cmd-prompt terminal-font">local@hackit:<span id="location">/</span>>&nbsp</span>
+			<span class="cmd-input terminal-font" onmouseup="saveSelection();" onkeyup="saveSelection();" onfocus="restoreSelection();" contenteditable="true"></span>
+		</div>
 	</div>
 </body>
 </html>
