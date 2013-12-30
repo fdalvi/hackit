@@ -1,4 +1,4 @@
-var allowedCommands = ["cd", "mkdir", "rm", "ls"];
+var allowedCommands = ["cd", "mkdir", "rm", "ls", "cat"];
 var currentDirectory = fileSystem;
 
 $(document).ready(function() {
@@ -161,6 +161,24 @@ function processCommand(commandLine)
 		}
 		break;
 		case "rm":
+		break;
+		case "cat":
+		var file = currentDirectory.childByName(command[1]);
+		if(file == null)
+		{
+			result = "cat: " + command[1] + ": No such file or directory";
+		}
+		else
+		{
+			if(currentDirectory.directoryByName(command[1]) == null)
+			{
+				result = file.content;
+			}
+			else
+			{
+				result = "cat: " + command[1] + ": Is a directory";
+			}
+		}
 		break;
 		default:
 		result = command[0] + ": command not found";
