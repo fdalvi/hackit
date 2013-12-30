@@ -87,11 +87,29 @@ Directory.prototype.isRoot = function() {
 		return false;
 };
 
+Directory.prototype.directoryByName = function(childName) {
+	for (var i = 0; i<this.directories.length; i++) {
+		if(this.directories[i].name == childName)
+		{
+			return this.directories[i];
+			break;
+		}
+	};
+	return null;
+};
+
 Directory.prototype.childByName = function(childName) {
 	for (var i = 0; i<this.directories.length; i++) {
 		if(this.directories[i].name == childName)
 		{
 			return this.directories[i];
+			break;
+		}
+	};
+	for (var i = 0; i<this.files.length; i++) {
+		if(this.files[i].name == childName)
+		{
+			return this.files[i];
 			break;
 		}
 	};

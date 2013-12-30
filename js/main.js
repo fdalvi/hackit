@@ -125,7 +125,7 @@ function processCommand(commandLine)
 		}
 		else
 		{
-			var newDirectory = currentDirectory.childByName(command[1]);
+			var newDirectory = currentDirectory.directoryByName(command[1]);
 			if(newDirectory == null)
 				result = "cd: " + command[1] + ": No such directory!";
 			else
@@ -144,6 +144,14 @@ function processCommand(commandLine)
 		result = currentDirectory.listAll();
 		break;
 		case "mkdir":
+		if(currentDirectory.childByName(command[1]) == null)
+		{
+			currentDirectory.addDirectory(new Directory(command[1], new Date()));
+		}
+		else
+		{
+			result = "mkdir: cannot create directory '" + command[1] + "': File exists";
+		}
 		break;
 		case "rm":
 		break;
