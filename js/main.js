@@ -87,8 +87,14 @@ function processCommand(commandLine)
 {
 	// Trimming..
 	commandLine = commandLine.trim();
-	var delimIndex = commandLine.indexOf(" ");
 	var command = commandLine.split(" ");
+
+	var newCommand = [];
+	for (var i=0; i<command.length; i++) {
+		if(command[i].trim() != "")
+			newCommand.push(command[i].trim());
+	};
+	command = newCommand;
 
 	if(commandLine.length == 0)
 		return "";
@@ -100,6 +106,7 @@ function processCommand(commandLine)
 	switch(command[0])
 	{
 		case "cd":
+		console.log(command);
 		if(command[1] == ".")
 			break;
 		if(command[1] == "..")
